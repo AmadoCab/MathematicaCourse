@@ -1,0 +1,59 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1470,         51]
+NotebookOptionsPosition[      1002,         34]
+NotebookOutlinePosition[      1393,         50]
+CellTagsIndexPosition[      1350,         47]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["De ecuaciones a c\[OAcute]digo", "Title",
+ CellChangeTimes->{{3.962074872395377*^9, 
+  3.9620748788752832`*^9}},ExpressionUUID->"14760d54-f152-4faa-b6b8-\
+e1084a22e5f0"],
+
+Cell["Funciones y su aplicaci\[OAcute]n", "Subtitle",
+ CellChangeTimes->{{3.962075124893395*^9, 3.962075130741765*^9}, {
+  3.962075209074247*^9, 
+  3.962075243062291*^9}},ExpressionUUID->"826ab967-09f3-4a22-a1b6-\
+f76db4b06c5e"]
+}, Open  ]]
+},
+WindowSize->{1024.5, 483},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d230bf6e-e692-4d08-b04b-ce435244455a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 175, 3, 74, "Title",ExpressionUUID->"14760d54-f152-4faa-b6b8-e1084a22e5f0"],
+Cell[758, 27, 228, 4, 39, "Subtitle",ExpressionUUID->"826ab967-09f3-4a22-a1b6-f76db4b06c5e"]
+}, Open  ]]
+}
+]
+*)
+
