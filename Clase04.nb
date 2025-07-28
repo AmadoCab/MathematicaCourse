@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1474,         51]
-NotebookOptionsPosition[      1006,         34]
-NotebookOutlinePosition[      1397,         50]
-CellTagsIndexPosition[      1354,         47]
+NotebookDataLength[      3227,         96]
+NotebookOptionsPosition[      2355,         73]
+NotebookOutlinePosition[      2750,         89]
+CellTagsIndexPosition[      2707,         86]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,12 +29,51 @@ Cell["CAS y matem\[AAcute]ticas avanzadas", "Subtitle",
  CellChangeTimes->{{3.962075124893395*^9, 3.962075130741765*^9}, {
   3.962075209074247*^9, 
   3.9620752784601917`*^9}},ExpressionUUID->"826ab967-09f3-4a22-a1b6-\
-f76db4b06c5e"]
+f76db4b06c5e"],
+
+Cell["\<\
+Mathematica puede ser de mucha ayuda para resolver  problemas de forma simb\
+\[OAcute]lica y num\[EAcute]rica.\
+\>", "Text",
+ CellChangeTimes->{{3.962648549024888*^9, 3.962648566342654*^9}, {
+  3.962649843702816*^9, 
+  3.9626498882204647`*^9}},ExpressionUUID->"a171eecc-1676-4534-b68c-\
+bb5fb4016d18"],
+
+Cell["\<\
+Simplify, FullSimplify, Solve, Reduce, DSolve, Integrate, Series, MatrixForm, \
+Eigenvalues, NullSpace, RowReduce, D, Limit, Sum, Plot, Table\
+\>", "Text",
+ CellChangeTimes->{{3.962649787712513*^9, 
+  3.9626497905239487`*^9}},ExpressionUUID->"8ac84e7a-01cf-4c94-90de-\
+7ae292daf7a8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"a", "^", "3"}], "+", 
+    RowBox[{"b", "^", "3"}], "+", 
+    RowBox[{"c", "^", "3"}], "-", 
+    RowBox[{"3", " ", "a", " ", "b", " ", "c"}]}], ",", 
+   RowBox[{
+    RowBox[{"a", "+", "b", "+", "c"}], "==", "0"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.962648639186914*^9, 3.962648641135365*^9}, {
+  3.962648684733101*^9, 3.962648696121043*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"a38dc11b-ef1d-414f-8f09-ba00efb53d7f"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.962648641855665*^9, {3.9626486967657337`*^9, 3.96264871287611*^9}},
+ CellLabel->"Out[1]=",ExpressionUUID->"f534c665-9509-468a-bc81-51a602c1fca5"]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1024.5, 483},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+FrontEndVersion->"13.3 para Mac OS X x86 (64-bit) (July 24, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"376fb389-4226-49a1-837f-b599e7a9cf84"
 ]
@@ -50,8 +89,14 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 175, 3, 74, "Title",ExpressionUUID->"14760d54-f152-4faa-b6b8-e1084a22e5f0"],
-Cell[758, 27, 232, 4, 39, "Subtitle",ExpressionUUID->"826ab967-09f3-4a22-a1b6-f76db4b06c5e"]
+Cell[580, 22, 175, 3, 98, "Title",ExpressionUUID->"14760d54-f152-4faa-b6b8-e1084a22e5f0"],
+Cell[758, 27, 232, 4, 53, "Subtitle",ExpressionUUID->"826ab967-09f3-4a22-a1b6-f76db4b06c5e"],
+Cell[993, 33, 311, 7, 35, "Text",ExpressionUUID->"a171eecc-1676-4534-b68c-bb5fb4016d18"],
+Cell[1307, 42, 293, 6, 35, "Text",ExpressionUUID->"8ac84e7a-01cf-4c94-90de-7ae292daf7a8"],
+Cell[CellGroupData[{
+Cell[1625, 52, 501, 12, 44, "Input",ExpressionUUID->"a38dc11b-ef1d-414f-8f09-ba00efb53d7f"],
+Cell[2129, 66, 198, 3, 34, "Output",ExpressionUUID->"f534c665-9509-468a-bc81-51a602c1fca5"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
