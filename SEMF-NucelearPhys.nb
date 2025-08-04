@@ -1,0 +1,1547 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     71676,       1539]
+NotebookOptionsPosition[     68938,       1478]
+NotebookOutlinePosition[     69371,       1495]
+CellTagsIndexPosition[     69328,       1492]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["SEMF - F\[IAcute]sica nuclear", "Title",
+ CellChangeTimes->{{3.921100995613429*^9, 
+  3.921101003804597*^9}},ExpressionUUID->"15ad737a-cf61-4e87-82f9-\
+9c59e7d443d0"],
+
+Cell[CellGroupData[{
+
+Cell["Definici\[OAcute]n propia de la funci\[OAcute]n", "Chapter",
+ CellChangeTimes->{{3.96310440557216*^9, 
+  3.963104410781692*^9}},ExpressionUUID->"7a571189-1c95-4f51-8b0b-\
+a8a2fdcf0846"],
+
+Cell[CellGroupData[{
+
+Cell["Definiciones preliminares", "Section",
+ CellChangeTimes->{{3.921101008442543*^9, 
+  3.921101011906393*^9}},ExpressionUUID->"3040712b-6737-4218-9515-\
+21825cc412e3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["M", "p"], "=", 
+   RowBox[{
+    TemplateBox[{"\"proton\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"Particle\"", ",", "\"Proton\""}], "]"}], 
+      "\"Entity[\\\"Particle\\\", \\\"Proton\\\"]\"", "\"particle\""},
+     "Entity"], "[", "\"\<Mass\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["M", "n"], "=", 
+   RowBox[{
+    TemplateBox[{"\"neutron\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"Particle\"", ",", "\"Neutron\""}], "]"}], 
+      "\"Entity[\\\"Particle\\\", \\\"Neutron\\\"]\"", "\"particle\""},
+     "Entity"], "[", "\"\<Mass\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["M", "e"], "=", 
+   RowBox[{
+    TemplateBox[{"\"electron\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"Particle\"", ",", "\"Electron\""}], "]"}], 
+      "\"Entity[\\\"Particle\\\", \\\"Electron\\\"]\"", "\"particle\""},
+     "Entity"], "[", "\"\<Mass\>\"", "]"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.921100610087934*^9, 3.921100714803936*^9}, {
+  3.9211009583309717`*^9, 3.9211009640859833`*^9}, {3.921102472902554*^9, 
+  3.921102485457485*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"87ab4fbd-03a1-45e0-b6bf-aef6e5040b95"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["a", "V"], "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"15.56", ",", 
+     RowBox[{"\"\<Megaelectronvolts\>\"", "/", 
+      SuperscriptBox["\"\<SpeedOfLight\>\"", "2"]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["a", "S"], "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"17.23", ",", 
+     RowBox[{"\"\<Megaelectronvolts\>\"", "/", 
+      SuperscriptBox["\"\<SpeedOfLight\>\"", "2"]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["a", "c"], "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"0.697", ",", 
+     RowBox[{"\"\<Megaelectronvolts\>\"", "/", 
+      SuperscriptBox["\"\<SpeedOfLight\>\"", "2"]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["a", "a"], "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"93.14", ",", 
+     RowBox[{"\"\<Megaelectronvolts\>\"", "/", 
+      SuperscriptBox["\"\<SpeedOfLight\>\"", "2"]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["a", "P"], "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"12", ",", 
+     RowBox[{"\"\<Megaelectronvolts\>\"", "/", 
+      SuperscriptBox["\"\<SpeedOfLight\>\"", "2"]}]}], "]"}]}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.9211008054134283`*^9, 3.921100949760314*^9}, {
+  3.921102134042181*^9, 3.921102134094234*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"0aa593d4-76aa-42aa-96a7-93d808267b08"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Funci\[OAcute]n", "Section",
+ CellChangeTimes->{{3.921101019609342*^9, 
+  3.921101024761114*^9}},ExpressionUUID->"ea6dfd94-ea3e-4862-b0cf-\
+2ea98ca6f806"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SEMF", "[", 
+   RowBox[{"Z_", ",", "A_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "f0", ",", "f1", ",", "f2", ",", "f3", ",", "f4", ",", "f5", ",", 
+      "\[Delta]"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"f0", "=", 
+      RowBox[{
+       RowBox[{"Z", 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["M", "p"], "+", 
+          SubscriptBox["M", "e"]}], ")"}]}], "+", 
+       RowBox[{
+        SubscriptBox["M", "n"], 
+        RowBox[{"(", 
+         RowBox[{"A", "-", "Z"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"f1", "=", 
+      RowBox[{
+       RowBox[{"-", 
+        SubscriptBox["a", "V"]}], " ", "A"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"f2", "=", 
+      RowBox[{
+       SubscriptBox["a", "S"], " ", 
+       SuperscriptBox["A", 
+        RowBox[{"2", "/", "3"}]]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"f3", "=", 
+      FractionBox[
+       RowBox[{
+        SubscriptBox["a", "c"], " ", 
+        SuperscriptBox["Z", "2"]}], 
+       SuperscriptBox["A", 
+        RowBox[{"1", "/", "3"}]]]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"f4", "=", 
+      FractionBox[
+       RowBox[{
+        SubscriptBox["a", "a"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"Z", "-", 
+           RowBox[{"A", "/", "2"}]}], ")"}], "2"]}], "A"]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"f5", "=", 
+      RowBox[{
+       SubscriptBox["a", "P"], " ", 
+       SuperscriptBox["A", 
+        RowBox[{
+         RowBox[{"-", "1"}], "/", "2"}]]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Which", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"EvenQ", "[", "Z", "]"}], "&&", 
+        RowBox[{"OddQ", "[", 
+         RowBox[{"A", "-", "Z"}], "]"}]}], ",", 
+       RowBox[{"\[Delta]", "=", "0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"EvenQ", "[", "Z", "]"}], ",", 
+       RowBox[{"\[Delta]", "=", 
+        RowBox[{"-", "1"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"OddQ", "[", "Z", "]"}], "&&", 
+        RowBox[{"EvenQ", "[", 
+         RowBox[{"A", "-", "Z"}], "]"}]}], ",", 
+       RowBox[{"\[Delta]", "=", "0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"OddQ", "[", "Z", "]"}], ",", 
+       RowBox[{"\[Delta]", "=", "1"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"f0", "+", "f1", "+", "f2", "+", "f3", "+", "f4", "+", 
+      RowBox[{"\[Delta]", "\[Times]", "f5"}]}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.921101042348373*^9, 3.9211012340651627`*^9}, {
+   3.9211012683552923`*^9, 3.9211013166373177`*^9}, {3.921101382963154*^9, 
+   3.921101391391335*^9}, {3.921101444931975*^9, 3.921101496723783*^9}, {
+   3.921101547226986*^9, 3.921101634084611*^9}, {3.921101846262735*^9, 
+   3.921101847613329*^9}, {3.921101893468155*^9, 3.9211020775322533`*^9}, {
+   3.9211021407951736`*^9, 3.921102140853828*^9}, {3.921103658923915*^9, 
+   3.921103663431432*^9}, 3.963103923553083*^9, {3.963103965028823*^9, 
+   3.9631039994517593`*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"82f1bf03-66c2-4f25-8a9d-b2488d65e3c3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Testeos", "Section",
+ CellChangeTimes->{{3.921102800891033*^9, 
+  3.9211028018735447`*^9}},ExpressionUUID->"1e97d717-2e65-47c1-9d12-\
+a09861dedcb2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{"SEMF", "[", 
+    RowBox[{"40", ",", "88"}], "]"}], ",", 
+   RowBox[{"\"\<Megaelectronvolts\>\"", "/", 
+    SuperscriptBox["\"\<SpeedOfLight\>\"", "2"]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.921102833726927*^9, 3.921102835029612*^9}, {
+  3.921103028966837*^9, 3.921103029014819*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"2a6d72a7-55b4-4a50-b139-af7b01f8cfcd"],
+
+Cell[BoxData[
+ TemplateBox[{"81888.44440493052`", 
+   RowBox[{"\"MeV\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"c\"", "2"]}], 
+   "megaelectronvolts per speed of light squared", 
+   FractionBox["\"Megaelectronvolts\"", 
+    SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.921102836201169*^9, 3.9211030294943867`*^9, 
+  3.921103743479641*^9, 3.963104456750578*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"4c5bad3e-015e-4bfe-af78-e67d292cdcfe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{"SEMF", "[", 
+    RowBox[{"6", ",", "14"}], "]"}], ",", 
+   RowBox[{"\"\<Megaelectronvolts\>\"", "/", 
+    SuperscriptBox["\"\<SpeedOfLight\>\"", "2"]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.921103736573896*^9},
+ CellLabel->"In[19]:=",ExpressionUUID->"5bd93987-b3ae-4846-a4ea-184bea8e7eac"],
+
+Cell[BoxData[
+ TemplateBox[{"13045.323891993425`", 
+   RowBox[{"\"MeV\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"c\"", "2"]}], 
+   "megaelectronvolts per speed of light squared", 
+   FractionBox["\"Megaelectronvolts\"", 
+    SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.921103743566395*^9, 3.963104459891634*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"5d472599-5a4b-4359-bc9b-66718809ade2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{"SEMF", "[", 
+    RowBox[{"6", ",", "14"}], "]"}], ",", "\"\<Daltons\>\""}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.921103160773881*^9, 3.9211031756245327`*^9}, {
+  3.921103213326377*^9, 3.921103231849876*^9}, {3.9211033400753508`*^9, 
+  3.9211033471701393`*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"d96f32ca-171e-4b78-ab3b-32c791296d15"],
+
+Cell[BoxData[
+ TemplateBox[{"14.004730527162728`", "\"Da\"", "daltons", "\"Daltons\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{
+  3.9211032327304487`*^9, {3.921103343172606*^9, 3.921103347826449*^9}, 
+   3.921103743672132*^9, 3.963104462731853*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"50156fd9-a543-466d-93c5-aa5bec7d81b2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ans", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{"SEMF", "[", 
+     RowBox[{"75", ",", "189"}], "]"}], ",", 
+    RowBox[{"\"\<Megaelectronvolts\>\"", "/", 
+     SuperscriptBox["\"\<SpeedOfLight\>\"", "2"]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.921102111290701*^9, 3.921102122022455*^9}, {
+  3.921102164916892*^9, 3.921102209309369*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"a448136a-77dc-4ea6-a93a-326ffa9af541"],
+
+Cell[BoxData[
+ TemplateBox[{"176016.36478774692`", 
+   RowBox[{"\"MeV\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"c\"", "2"]}], 
+   "megaelectronvolts per speed of light squared", 
+   FractionBox["\"Megaelectronvolts\"", 
+    SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.9211021227402163`*^9, 3.921102145443466*^9}, {
+   3.9211021941683702`*^9, 3.921102211684965*^9}, 3.921103743811817*^9, 
+   3.963104533067891*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"065963cf-d22c-4496-b477-2c156aad1a5f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{"ans", ",", "\"\<Daltons\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.921102214423049*^9, 3.921102247462672*^9}, {
+  3.921102994916298*^9, 3.921102996580834*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"afb18122-23cf-48d4-a24f-49308fcca337"],
+
+Cell[BoxData[
+ TemplateBox[{"188.9613303304875`", "\"Da\"", "daltons", "\"Daltons\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.9211029969975357`*^9, 3.921103743897326*^9, 
+  3.963104535475451*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"ad235e79-b01a-4c81-b902-5fed789c8b6d"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Formula", "Chapter",
+ CellChangeTimes->{{3.96310462483349*^9, 
+  3.963104626022922*^9}},ExpressionUUID->"1b5d4d3d-348f-4a11-a6cd-\
+a32a4246ceb1"],
+
+Cell[CellGroupData[{
+
+Cell["Volume term semi-empirical mass formula", "WolframAlphaLong",
+ CellChangeTimes->{{3.963103046950726*^9, 3.963103059247718*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"c545dca8-658c-4384-a2c2-9807ac660434"],
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryResults",
+  DynamicModuleBox[{Typeset`q$$ = "Volume term semi-empirical mass formula", 
+   Typeset`opts$$ = {
+   AppearanceElements -> {
+     "Warnings", "Assumptions", "Brand", "Pods", "PodMenus", "Unsuccessful", 
+      "Sources"}, Asynchronous -> All, 
+    TimeConstraint -> {20, Automatic, Automatic, Automatic}, 
+    Method -> {
+     "Formats" -> {"cell", "minput", "msound", "dataformats"}, "Server" -> 
+      "https://api.wolframalpha.com/v1/"}}, Typeset`elements$$ = {
+   "Warnings", "Assumptions", "Brand", "Pods", "PodMenus", "Unsuccessful", 
+    "Sources"}, Typeset`pod1$$ = XMLElement[
+   "pod", {"title" -> "Input", "scanner" -> "Formula", "id" -> "Input", 
+     "position" -> "1", "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {"FormulaData[\"SemiEmpiricalMassFormula\"]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             GridBox[{{
+                PaneBox[
+                 StyleBox[
+                  TagBox[
+                   GridBox[{{
+                    StyleBox[
+                    "\"semi\[Hyphen]empirical mass formula\"", {
+                    LineIndent -> 0, LineSpacing -> {0.9, 0, 1.5}}]}}, 
+                    GridBoxBackground -> {"Columns" -> {
+                    GrayLevel[0.9489999999999955]}, "Rows" -> {{None}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False, 
+                    GridBoxDividers -> {"Columns" -> {
+                    GrayLevel[0.84], 
+                    GrayLevel[0.84]}, "Rows" -> {{
+                    GrayLevel[0.84]}}, 
+                    "RowsIndexed" -> {
+                    1 -> GrayLevel[0.84], -1 -> GrayLevel[0.84]}}, 
+                    GridBoxSpacings -> {"Columns" -> {2, 2}, "Rows" -> {{1}}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+                    AllowScriptLevelChange -> False, BaselinePosition -> 1], 
+                   $CellContext`TagBoxWrapper["Separator" -> " | "]], 
+                  LineSpacing -> {1, 0, 1.5}, LineIndent -> 0], 
+                 BaselinePosition -> Center]}}, 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+              ColumnsEqual -> False, RowsEqual -> False, 
+              GridBoxSpacings -> {"Columns" -> {{
+                   AbsoluteThickness[-1]}}, "Rows" -> {{0}}}, 
+              AllowScriptLevelChange -> False], 
+             $CellContext`TagBoxWrapper["Separator" -> " | "]], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,computabledata,formatteddata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Grid"}, {}]}]}], 
+   Typeset`pod2$$ = XMLElement[
+   "pod", {"title" -> "Equations", "scanner" -> "Formula", "id" -> "Equation",
+      "position" -> "2310", "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Column[{FormulaData[\"SemiEmpiricalMassFormula\"], \
+FormulaData[\"SemiEmpiricalMassFormula\", \"QuantityVariableTable\"]}]"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             GridBox[{{
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    TagBox[
+                    PaneBox[
+                    StyleBox[
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    SubscriptBox["E", "B"], "\[LongEqual]", 
+                    RowBox[{
+                    RowBox[{
+                    SubscriptBox["a", "V"], " ", "A"}], "-", 
+                    RowBox[{
+                    SubscriptBox["a", "S"], " ", 
+                    SuperscriptBox["A", 
+                    RowBox[{"2", "/", "3"}]]}], "-", 
+                    RowBox[{
+                    SubscriptBox["a", "C"], " ", 
+                    FractionBox[
+                    RowBox[{"Z", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"Z", "-", "1"}], ")"}]}], 
+                    RadicalBox["A", "3"]]}], "-", 
+                    RowBox[{
+                    SubscriptBox["a", "A"], " ", 
+                    FractionBox[
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"N", "-", "Z"}], ")"}], "2"], "A"]}], "+", 
+                    RowBox[{"\[Delta]", " ", 
+                    SubscriptBox["a", "P"], " ", 
+                    SuperscriptBox["A", 
+                    SubscriptBox["k", "P"]]}]}]}], 
+                    RowBox[{"A", "\[LongEqual]", 
+                    RowBox[{"N", "+", "Z"}]}]}, {
+                    RowBox[{"\[Delta]", "\[LongEqual]", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"1", "-", 
+                    TemplateBox[{"A", "2"}, "Mod"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "-", 
+                    TemplateBox[{"N", "2"}, "Mod"], "-", 
+                    TemplateBox[{"Z", "2"}, "Mod"]}], ")"}]}]}], 
+                    "\[SpanFromLeft]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+                    AutoDelete -> False, 
+                    GridBoxDividers -> {
+                    "Columns" -> {False, {True}, False}, 
+                    "Rows" -> {False, {True}, False}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{1}}}, 
+                    FrameStyle -> GrayLevel[0.84]], "Grid"], HoldForm], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ], Row], {
+                    GrayLevel[0], LinebreakAdjustments -> {1, 100, 1, 0, 100},
+                     LineIndent -> 0}], 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], "\[SpanFromLeft]"}, {
+                    TagBox[
+                    PaneBox[
+                    SubscriptBox["E", "B"], 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"binding energy\""}, {
+                    TagBox[
+                    PaneBox[
+                    SubscriptBox["a", "V"], 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"volume coefficient\""}, {
+                    TagBox[
+                    PaneBox[
+                    SubscriptBox["a", "S"], 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"surface coefficient\""}, {
+                    TagBox[
+                    PaneBox[
+                    SubscriptBox["a", "C"], 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"coulomb coefficient\""}, {
+                    TagBox[
+                    PaneBox[
+                    SubscriptBox["a", "A"], 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"asymmetry coefficient\""}, {
+                    TagBox[
+                    PaneBox[
+                    SubscriptBox["a", "P"], 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"pairing coefficient\""}, {
+                    TagBox[
+                    PaneBox[
+                    "Z", BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"atomic number\""}, {
+                    TagBox[
+                    PaneBox[
+                    "N", BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"neutron number\""}, {
+                    TagBox[
+                    PaneBox[
+                    SubscriptBox["k", "P"], 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"pairing term coefficient\""}, {
+                    TagBox[
+                    PaneBox[
+                    "A", BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], "\"mass number\""}, {
+                    TagBox[
+                    PaneBox[
+                    "\[Delta]", 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    $CellContext`TagBoxWrapper["Label"]], 
+                    "\"pairing term sign\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {Left, Left}, "Rows" -> {{Baseline}}, 
+                    "ItemsIndexed" -> {{1, 1} -> {Left, Baseline}, {1, 2} -> {
+                    Left, Baseline}}}, AutoDelete -> False, 
+                    GridBoxBackground -> {
+                    "Columns" -> {None, None}, "Rows" -> {None, None}}, 
+                    GridBoxFrame -> {
+                    "Columns" -> {{True}}, "Rows" -> {{True}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{1.5}, 2}, "Rows" -> {{1}}}, FrameStyle -> 
+                    GrayLevel[0.84], BaselinePosition -> Automatic, 
+                    AllowScriptLevelChange -> False], "Grid"], 
+                    LineSpacing -> {0.9, 0, 1.5}, LineIndent -> 0, 
+                    StripOnInput -> False]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+              DefaultBaseStyle -> "Column", 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Column"], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,computabledata,formatteddata,formuladata"}], 
+       XMLElement["definitions", {"count" -> "2"}, {
+         XMLElement[
+         "definition", {
+          "word" -> "atomic number", "desc" -> 
+           "number of protons in the nucleus"}, {}], 
+         XMLElement[
+         "definition", {
+          "word" -> "mass number", "desc" -> 
+           "number of nucleons in the nucleus"}, {}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Grid"}, {}]}]}], 
+   Typeset`pod3$$ = XMLElement[
+   "pod", {"title" -> "Input values", "scanner" -> "Formula", "id" -> 
+     "InputValue", "position" -> "2315", "error" -> "false", "numsubpods" -> 
+     "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            StyleBox[
+             TagBox[
+              GridBox[{{
+                 TagBox[
+                  PaneBox[
+                  "\"volume coefficient\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  $CellContext`TagBoxWrapper["Label"]], 
+                 TagBox[
+                  StyleBox[
+                   TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["15.75", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "15.75", "SRString" -> "15.75"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"MeV\"", {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], Row], Identity], #& , SyntaxForm -> Dot], "  ", 
+                    TagBox[
+                    StyleBox[
+                    TagBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"megaelectronvolts\"", 
+                    "\[NoBreak]", "\")\""}], Row], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], Row]}], Row], "Unit", SyntaxForm -> Dot], 
+                   LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                   0, ZeroWidthTimes -> False], Row]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"surface coefficient\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  $CellContext`TagBoxWrapper["Label"]], 
+                 TagBox[
+                  StyleBox[
+                   TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["17.8", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "17.8", "SRString" -> "17.8"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"MeV\"", {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], Row], Identity], #& , SyntaxForm -> Dot], "  ", 
+                    TagBox[
+                    StyleBox[
+                    TagBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"megaelectronvolts\"", 
+                    "\[NoBreak]", "\")\""}], Row], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], Row]}], Row], "Unit", SyntaxForm -> Dot], 
+                   LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                   0, ZeroWidthTimes -> False], Row]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"coulomb coefficient\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  $CellContext`TagBoxWrapper["Label"]], 
+                 TagBox[
+                  StyleBox[
+                   TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["0.711", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "0.711", "SRString" -> "0.711"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"MeV\"", {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], Row], Identity], #& , SyntaxForm -> Dot], "  ", 
+                    TagBox[
+                    StyleBox[
+                    TagBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"megaelectronvolts\"", 
+                    "\[NoBreak]", "\")\""}], Row], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], Row]}], Row], "Unit", SyntaxForm -> Dot], 
+                   LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                   0, ZeroWidthTimes -> False], Row]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"asymmetry coefficient\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  $CellContext`TagBoxWrapper["Label"]], 
+                 TagBox[
+                  StyleBox[
+                   TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["23.7", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "23.7", "SRString" -> "23.7"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"MeV\"", {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], Row], Identity], #& , SyntaxForm -> Dot], "  ", 
+                    TagBox[
+                    StyleBox[
+                    TagBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"megaelectronvolts\"", 
+                    "\[NoBreak]", "\")\""}], Row], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], Row]}], Row], "Unit", SyntaxForm -> Dot], 
+                   LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                   0, ZeroWidthTimes -> False], Row]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"pairing coefficient\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  $CellContext`TagBoxWrapper["Label"]], 
+                 TagBox[
+                  StyleBox[
+                   TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["11.18", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "11.18", "SRString" -> "11.18"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"MeV\"", {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], Row], Identity], #& , SyntaxForm -> Dot], "  ", 
+                    TagBox[
+                    StyleBox[
+                    TagBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"megaelectronvolts\"", 
+                    "\[NoBreak]", "\")\""}], Row], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], Row]}], Row], "Unit", SyntaxForm -> Dot], 
+                   LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                   0, ZeroWidthTimes -> False], Row]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"atomic number\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  $CellContext`TagBoxWrapper["Label"]], 
+                 TagBox["6", Row]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"neutron number\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  $CellContext`TagBoxWrapper["Label"]], 
+                 TagBox["6", Row]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"pairing term coefficient\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  $CellContext`TagBoxWrapper["Label"]], 
+                 TagBox[
+                  RowBox[{"-", 
+                    FractionBox["1", "2"]}], Row]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {Left, {Left}}, "Rows" -> {{Baseline}}}, 
+               AutoDelete -> False, 
+               GridBoxBackground -> {"Columns" -> {None, None}}, 
+               GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {"Columns" -> {{1.5}, 2}, "Rows" -> {{1}}}, 
+               FrameStyle -> GrayLevel[0.84], BaselinePosition -> Automatic, 
+               AllowScriptLevelChange -> False], "Grid"], 
+             LineSpacing -> {0.9, 0, 1.5}, LineIndent -> 0, StripOnInput -> 
+             False], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,computabledata,formatteddata,numberdata,quantitydata"}], 
+       XMLElement["definitions", {"count" -> "1"}, {
+         XMLElement[
+         "definition", {
+          "word" -> "atomic number", "desc" -> 
+           "number of protons in the nucleus"}, {}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Grid"}, {}]}]}], 
+   Typeset`pod4$$ = XMLElement[
+   "pod", {"title" -> "Result", "scanner" -> "Formula", "id" -> "Result", 
+     "position" -> "2320", "error" -> "false", "numsubpods" -> "1", "primary" -> 
+     "true"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "FormulaData[\"SemiEmpiricalMassFormula\", {Subscript[\"a\", \"V\"] \
+-> Quantity[15.75, \"Megaelectronvolts\"], Subscript[\"a\", \"S\"] -> \
+Quantity[17.8, \"Megaelectronvolts\"], Subscript[\"a\", \"C\"] -> \
+Quantity[0.711, \"Megaelectronvolts\"], Subscript[\"a\", \"A\"] -> \
+Quantity[23.7, \"Megaelectronvolts\"], Subscript[\"a\", \"P\"] -> \
+Quantity[11.18, \"Megaelectronvolts\"], \"Z\" -> 6, \"N\" -> 6, Subscript[\"k\
+\", \"P\"] -> -1/2}]"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            StyleBox[
+             TagBox[
+              GridBox[{{
+                 TagBox[
+                  PaneBox[
+                  "\"binding energy\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  $CellContext`TagBoxWrapper["Label"]], 
+                 TagBox[
+                  GridBox[{{
+                    StyleBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["89.61", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "89.61", "SRString" -> "89.61"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"MeV\"", {FontSize -> 0.9 Inherited, FontFamily -> 
+                    "Roboto", LinebreakAdjustments -> {1, 100, 1, 0, 100}, 
+                    LineIndent -> 0}]}], Row], Identity], #& , SyntaxForm -> 
+                    Dot], "  ", 
+                    TagBox[
+                    StyleBox[
+                    TagBox[
+                    
+                    RowBox[{"\"(\"", "\[NoBreak]", "\"megaelectronvolts\"", 
+                    "\[NoBreak]", "\")\""}], Row], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], Row]}], Row], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False]}, {
+                    StyleBox[
+                    StyleBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox["\"=\"", {
+                    GrayLevel[0.5999999999999889], LineIndent -> 0}], 
+                    "\[InvisibleSpace]", "\" \"", "\[InvisibleSpace]", 
+                    StyleBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["0.08961", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "0.08961", "SRString" -> "0.08961"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LineIndent -> 0}], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"GeV\"", {FontSize -> 0.9 Inherited, FontFamily -> 
+                    "Roboto", LineIndent -> 0}]}], Row], Identity], #& , 
+                    SyntaxForm -> Dot], "  ", 
+                    TagBox[
+                    StyleBox[
+                    TagBox[
+                    
+                    RowBox[{"\"(\"", "\[NoBreak]", "\"gigaelectronvolts\"", 
+                    "\[NoBreak]", "\")\""}], Row], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], LineIndent -> 0}], Row]}], 
+                    Row], "Unit", SyntaxForm -> Dot], LineIndent -> 0, 
+                    ZeroWidthTimes -> False]}], Row], LineIndent -> 0], 
+                    LinebreakAdjustments -> {1, 100, 0, 0, 100}]}, {
+                    StyleBox[
+                    StyleBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox["\"=\"", {
+                    GrayLevel[0.5999999999999889], LineIndent -> 0}], 
+                    "\[InvisibleSpace]", "\" \"", "\[InvisibleSpace]", 
+                    StyleBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"1.436", 
+                    StyleBox["\[Times]", 
+                    GrayLevel[0.5]], 
+                    SuperscriptBox["10", "-11"]}], 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> RowBox[{"1.436", "\[Times]", 
+                    SuperscriptBox["10", "-11"]}], "SRString" -> 
+                    "1.436 times 10 to the negative 11"], SyntaxForm -> 
+                    CenterDot], "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LineIndent -> 0}], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox["\"J\"", {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    LineIndent -> 0}]}], Row], Identity], #& , SyntaxForm -> 
+                    Dot], "  ", 
+                    TagBox[
+                    StyleBox[
+                    TagBox[
+                    
+                    RowBox[{"\"(\"", "\[NoBreak]", "\"joules\"", "\[NoBreak]",
+                     "\")\""}], Row], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], LineIndent -> 0}], Row]}], 
+                    Row], "Unit", SyntaxForm -> Dot], LineIndent -> 0, 
+                    ZeroWidthTimes -> False]}], Row], LineIndent -> 0], 
+                    LinebreakAdjustments -> {1, 100, 0, 0, 100}]}}, 
+                   GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                   BaselinePosition -> 1, DefaultBaseStyle -> "Column", 
+                   GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                  "Column"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {Left, Left}, "Rows" -> {{Baseline}}}, 
+               AutoDelete -> False, 
+               GridBoxBackground -> {"Columns" -> {None, None}}, 
+               GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {"Columns" -> {{1.5}, 2}, "Rows" -> {{1}}}, 
+               FrameStyle -> GrayLevel[0.84], BaselinePosition -> Automatic, 
+               AllowScriptLevelChange -> False], "Grid"], 
+             LineSpacing -> {0.9, 0, 1.5}, LineIndent -> 0, StripOnInput -> 
+             False], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,numberdata,\
+quantitydata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Grid"}, {}]}], 
+     XMLElement["states", {"count" -> "2"}, {
+       XMLElement[
+       "state", {
+        "name" -> "More units", "input" -> "Result__More units"}, {}], 
+       XMLElement[
+       "state", {
+        "name" -> "Step-by-step solution", "input" -> 
+         "Result__Step-by-step solution", "stepbystep" -> "true", 
+         "buttonstyle" -> "StepByStepSolution"}, {}]}]}], Typeset`pod5$$, 
+   Typeset`pod6$$, Typeset`pod7$$, Typeset`pod8$$, Typeset`pod9$$, 
+   Typeset`pod10$$, Typeset`pod11$$, Typeset`pod12$$, Typeset`pod13$$, 
+   Typeset`pod14$$, Typeset`pod15$$, Typeset`pod16$$, Typeset`pod17$$, 
+   Typeset`pod18$$, Typeset`pod19$$, Typeset`pod20$$, Typeset`pod21$$, 
+   Typeset`pod22$$, Typeset`pod23$$, Typeset`pod24$$, Typeset`pod25$$, 
+   Typeset`pod26$$, Typeset`pod27$$, Typeset`pod28$$, Typeset`pod29$$, 
+   Typeset`pod30$$, Typeset`pod31$$, Typeset`pod32$$, Typeset`pod33$$, 
+   Typeset`pod34$$, Typeset`aux1$$ = {True, False, {False}, True}, 
+   Typeset`aux2$$ = {True, False, {False}, True}, Typeset`aux3$$ = {
+   True, False, {False}, True}, Typeset`aux4$$ = {True, False, {False}, True},
+    Typeset`aux5$$ = {True, False, {False}, True}, Typeset`aux6$$ = {
+   True, False, {False}, True}, Typeset`aux7$$ = {True, False, {False}, True},
+    Typeset`aux8$$ = {True, False, {False}, True}, Typeset`aux9$$ = {
+   True, False, {False}, True}, Typeset`aux10$$ = {
+   True, False, {False}, True}, Typeset`aux11$$ = {
+   True, False, {False}, True}, Typeset`aux12$$ = {
+   True, False, {False}, True}, Typeset`aux13$$ = {
+   True, False, {False}, True}, Typeset`aux14$$ = {
+   True, False, {False}, True}, Typeset`aux15$$ = {
+   True, False, {False}, True}, Typeset`aux16$$ = {
+   True, False, {False}, True}, Typeset`aux17$$ = {
+   True, False, {False}, True}, Typeset`aux18$$ = {
+   True, False, {False}, True}, Typeset`aux19$$ = {
+   True, False, {False}, True}, Typeset`aux20$$ = {
+   True, False, {False}, True}, Typeset`aux21$$ = {
+   True, False, {False}, True}, Typeset`aux22$$ = {
+   True, False, {False}, True}, Typeset`aux23$$ = {
+   True, False, {False}, True}, Typeset`aux24$$ = {
+   True, False, {False}, True}, Typeset`aux25$$ = {
+   True, False, {False}, True}, Typeset`aux26$$ = {
+   True, False, {False}, True}, Typeset`aux27$$ = {
+   True, False, {False}, True}, Typeset`aux28$$ = {
+   True, False, {False}, True}, Typeset`aux29$$ = {
+   True, False, {False}, True}, Typeset`aux30$$ = {
+   True, False, {False}, True}, Typeset`aux31$$ = {
+   True, False, {False}, True}, Typeset`aux32$$ = {
+   True, False, {False}, True}, Typeset`aux33$$ = {
+   True, False, {False}, True}, Typeset`aux34$$ = {
+   True, False, {False}, True}, Typeset`asyncpods$$ = {}, Typeset`nonpods$$ = {
+    XMLElement[
+    "warnings", {
+     "text" -> "Using closest Wolfram|Alpha interpretation:", "new" -> 
+      "semi-empirical mass formula", "score" -> "0.6923076923076923", "level" -> 
+      "high"}, {
+      XMLElement[
+      "alternative", {
+       "score" -> "0.26794871794871794", "level" -> "low", "val" -> 
+        "Volume term"}, {}]}], 
+    XMLElement["assumptions", {"count" -> "8"}, {
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "template" -> 
+        "volume coefficient:${field}", "count" -> "1", "pulldown" -> "false", 
+        "current" -> "1", "default" -> 
+        "{\"F\", \"SemiEmpiricalMassFormula\", \"aV\"} -> \"15.75 MeV\""}, {
+        XMLElement[
+        "value", {
+         "valid" -> "true", "name" -> "SemiEmpiricalMassFormula.aV", "desc" -> 
+          "15.75 MeV", "input" -> 
+          "{\"F\", \"SemiEmpiricalMassFormula\", \"aV\"} -> \"15.75 MeV\""}, \
+{}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "template" -> 
+        "surface coefficient:${field}", "count" -> "1", "pulldown" -> "false",
+         "current" -> "1", "default" -> 
+        "{\"F\", \"SemiEmpiricalMassFormula\", \"aS\"} -> \"17.8 MeV\""}, {
+        XMLElement[
+        "value", {
+         "valid" -> "true", "name" -> "SemiEmpiricalMassFormula.aS", "desc" -> 
+          "17.8 MeV", "input" -> 
+          "{\"F\", \"SemiEmpiricalMassFormula\", \"aS\"} -> \"17.8 MeV\""}, \
+{}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "template" -> 
+        "coulomb coefficient:${field}", "count" -> "1", "pulldown" -> "false",
+         "current" -> "1", "default" -> 
+        "{\"F\", \"SemiEmpiricalMassFormula\", \"aC\"} -> \"0.711 MeV\""}, {
+        XMLElement[
+        "value", {
+         "valid" -> "true", "name" -> "SemiEmpiricalMassFormula.aC", "desc" -> 
+          "0.711 MeV", "input" -> 
+          "{\"F\", \"SemiEmpiricalMassFormula\", \"aC\"} -> \"0.711 MeV\""}, \
+{}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "template" -> 
+        "asymmetry coefficient:${field}", "count" -> "1", "pulldown" -> 
+        "false", "current" -> "1", "default" -> 
+        "{\"F\", \"SemiEmpiricalMassFormula\", \"aA\"} -> \"23.7 MeV\""}, {
+        XMLElement[
+        "value", {
+         "valid" -> "true", "name" -> "SemiEmpiricalMassFormula.aA", "desc" -> 
+          "23.7 MeV", "input" -> 
+          "{\"F\", \"SemiEmpiricalMassFormula\", \"aA\"} -> \"23.7 MeV\""}, \
+{}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "template" -> 
+        "pairing coefficient:${field}", "count" -> "1", "pulldown" -> "false",
+         "current" -> "1", "default" -> 
+        "{\"F\", \"SemiEmpiricalMassFormula\", \"aP\"} -> \"11.18 MeV\""}, {
+        XMLElement[
+        "value", {
+         "valid" -> "true", "name" -> "SemiEmpiricalMassFormula.aP", "desc" -> 
+          "11.18 MeV", "input" -> 
+          "{\"F\", \"SemiEmpiricalMassFormula\", \"aP\"} -> \"11.18 MeV\""}, \
+{}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "template" -> "atomic number:${field}", 
+        "count" -> "1", "pulldown" -> "false", "current" -> "1", "default" -> 
+        "{\"F\", \"SemiEmpiricalMassFormula\", \"Z\"} -> \"6\""}, {
+        XMLElement[
+        "value", {
+         "valid" -> "true", "name" -> "SemiEmpiricalMassFormula.Z", "desc" -> 
+          "6", "input" -> 
+          "{\"F\", \"SemiEmpiricalMassFormula\", \"Z\"} -> \"6\""}, {}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "template" -> "neutron number:${field}", 
+        "count" -> "1", "pulldown" -> "false", "current" -> "1", "default" -> 
+        "{\"F\", \"SemiEmpiricalMassFormula\", \"N\"} -> \"6\""}, {
+        XMLElement[
+        "value", {
+         "valid" -> "true", "name" -> "SemiEmpiricalMassFormula.N", "desc" -> 
+          "6", "input" -> 
+          "{\"F\", \"SemiEmpiricalMassFormula\", \"N\"} -> \"6\""}, {}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "template" -> 
+        "pairing term coefficient:${field}", "count" -> "1", "pulldown" -> 
+        "false", "current" -> "1", "default" -> 
+        "{\"F\", \"SemiEmpiricalMassFormula\", \"kP\"} -> \"-1/2\""}, {
+        XMLElement[
+        "value", {
+         "valid" -> "true", "name" -> "SemiEmpiricalMassFormula.kP", "desc" -> 
+          "-1/2", "input" -> 
+          "{\"F\", \"SemiEmpiricalMassFormula\", \"kP\"} -> \"-1/2\""}, \
+{}]}]}]}, Typeset`initdone$$ = FrontEnd`SuppressEvaluationHash[True], 
+   Typeset`queryinfo$$ = {{
+    "success" -> "true", "error" -> "false", "numpods" -> "4", "datatypes" -> 
+     "Formula", "parsetiming" -> "0.275", "parsetimedout" -> "false", "id" -> 
+     "caiUdszLCMA=6:\
+eJzFVL1OHDEQPn5FAQ1VWoqgdAmhoITjOETBnS63QBFRnLmdRVa8Nlnbh65DSh2lzIPwAih1eA3egB\
+p2bN/uejHoRHMuLNsz/\
+uabz57ZuBD9ZK7RaMjFfDoSLE7mcbeVTy3ChpoRBT2SSRi0BFfA1aA4LleHIkvzRfQhvxVBStvpFc3\
+okLAOkdIZk6VJlGMqlY2Cu75mEK3gRcFGiFTSQccIHdv7Nf/lfHFGmAaZrLwBiztyZg/\
+R75smXFE1zho4bj7v2Vgfp0n2lFMlv1Y9zYk5b4k0FTwapxeCyUEHLgkwGKpM8JFgSoZYRQFW9/\
+9xbM2QVSvA6vdfvv7r7mF3dqyaAVbbOG53ZqhVL8Dq/M+/x0/nm7NhhTG/\
+UyyNgKEbMuDuRyWPPlFUcMLoUz7o/MsLq/niVEJ8AAnRyMCrPldv7oO7H+\
+We0GlmSVpGXngvRJekELu+YSwnmYaa31rRMjQfIm2r+ZdpNHfQ7Z/\
+aJJwsvOwh2K3QziYNqGhfPaZl6XNCU5CTxJFB06IVNqOlV/No6olryJy/\
+j1WRvXCkCGmAXgd3pYuvfEBHNIY6R6N8KSKm4b6MAZ6G2tz7qDVfp2YwAqS69dAGzdJFS1DqCFcxME\
+W8Cq0l5X278pkrCftMqsKV7kWoGlEfoaZYmYo9Q/odEdvY9uEX3nm9W/s3b/laCZ8BXOQUHw==", 
+     "kernelId" -> "76", "processId" -> "650129", "version" -> "2.6", 
+     "inputstring" -> "semi-empirical mass formula", "sbsallowed" -> "true", 
+     "parentId" -> "eb633251-a920-4324-a5dd-830afea0f754", "requestId" -> 
+     "eb633251-a920-4324-a5dd-830afea0f754", "timing" -> "5.374", "timedout" -> 
+     "", "timedoutpods" -> "", "recalculate" -> 
+     "https://gateway.wolframalpha.com/calculate/recalc?id=\
+NWM6NDY0NGU2ZTEtZjQ3ZS00N2I2LWE3NTEtOTk0NzVjMmFmYjE5"}, {
+    "success" -> "true", "error" -> "false", "numpods" -> "4", "datatypes" -> 
+     "Formula", "parsetiming" -> "0.264", "parsetimedout" -> "false", "id" -> 
+     "caiUdszLCMA=6:\
+eJzFVL1OHDEQPn5FAQ1VWoqgdAmhoITjOETBnS63QBFRnLmdRVa8Nlnbh65DSh2lzIPwAih1eA3egB\
+p2bN/uejHoRHMuLNsz/\
+uabz57ZuBD9ZK7RaMjFfDoSLE7mcbeVTy3ChpoRBT2SSRi0BFfA1aA4LleHIkvzRfQhvxVBStvpFc3\
+okLAOkdIZk6VJlGMqlY2Cu75mEK3gRcFGiFTSQccIHdv7Nf/lfHFGmAaZrLwBiztyZg/\
+R75smXFE1zho4bj7v2Vgfp0n2lFMlv1Y9zYk5b4k0FTwapxeCyUEHLgkwGKpM8JFgSoZYRQFW9/\
+9xbM2QVSvA6vdfvv7r7mF3dqyaAVbbOG53ZqhVL8Dq/M+/x0/nm7NhhTG/\
+UyyNgKEbMuDuRyWPPlFUcMLoUz7o/MsLq/niVEJ8AAnRyMCrPldv7oO7H+\
+We0GlmSVpGXngvRJekELu+YSwnmYaa31rRMjQfIm2r+ZdpNHfQ7Z/\
+aJJwsvOwh2K3QziYNqGhfPaZl6XNCU5CTxJFB06IVNqOlV/No6olryJy/\
+j1WRvXCkCGmAXgd3pYuvfEBHNIY6R6N8KSKm4b6MAZ6G2tz7qDVfp2YwAqS69dAGzdJFS1DqCFcxME\
+W8Cq0l5X278pkrCftMqsKV7kWoGlEfoaZYmYo9Q/odEdvY9uEX3nm9W/s3b/laCZ8BXOQUHw==", 
+     "kernelId" -> "75", "processId" -> "656445", "version" -> "2.6", 
+     "inputstring" -> "semi-empirical mass formula", "sbsallowed" -> "true", 
+     "parentId" -> "714c489f-b470-4080-b9e7-661314adff96", "requestId" -> 
+     "714c489f-b470-4080-b9e7-661314adff96", "timing" -> "5.146", "timedout" -> 
+     "", "timedoutpods" -> ""}}, Typeset`sessioninfo$$ = {
+   "TimeZone" -> -6., 
+    "Date" -> {2025, 8, 1, 23, 57, 46.171898`8.416952704185562}, "Line" -> 4, 
+    "SessionID" -> 20567179896969804942}, Typeset`showpods$$ = {1, 2, 3, 4}, 
+   Typeset`failedpods$$ = {5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
+   19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34}, 
+   Typeset`chosen$$ = {}, Typeset`open$$ = False, Typeset`newq$$ = 
+   "Volume term semi-empirical mass formula"}, 
+   DynamicBox[ToBoxes[
+     AlphaIntegration`FormatAlphaResults[
+      Dynamic[{
+       2, {Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$, Typeset`pod4$$, 
+         Typeset`pod5$$, Typeset`pod6$$, Typeset`pod7$$, Typeset`pod8$$, 
+         Typeset`pod9$$, Typeset`pod10$$, Typeset`pod11$$, Typeset`pod12$$, 
+         Typeset`pod13$$, Typeset`pod14$$, Typeset`pod15$$, Typeset`pod16$$, 
+         Typeset`pod17$$, Typeset`pod18$$, Typeset`pod19$$, Typeset`pod20$$, 
+         Typeset`pod21$$, Typeset`pod22$$, Typeset`pod23$$, Typeset`pod24$$, 
+         Typeset`pod25$$, Typeset`pod26$$, Typeset`pod27$$, Typeset`pod28$$, 
+         Typeset`pod29$$, Typeset`pod30$$, Typeset`pod31$$, Typeset`pod32$$, 
+         Typeset`pod33$$, Typeset`pod34$$}, {
+        Typeset`aux1$$, Typeset`aux2$$, Typeset`aux3$$, Typeset`aux4$$, 
+         Typeset`aux5$$, Typeset`aux6$$, Typeset`aux7$$, Typeset`aux8$$, 
+         Typeset`aux9$$, Typeset`aux10$$, Typeset`aux11$$, Typeset`aux12$$, 
+         Typeset`aux13$$, Typeset`aux14$$, Typeset`aux15$$, Typeset`aux16$$, 
+         Typeset`aux17$$, Typeset`aux18$$, Typeset`aux19$$, Typeset`aux20$$, 
+         Typeset`aux21$$, Typeset`aux22$$, Typeset`aux23$$, Typeset`aux24$$, 
+         Typeset`aux25$$, Typeset`aux26$$, Typeset`aux27$$, Typeset`aux28$$, 
+         Typeset`aux29$$, Typeset`aux30$$, Typeset`aux31$$, Typeset`aux32$$, 
+         Typeset`aux33$$, Typeset`aux34$$}, Typeset`chosen$$, Typeset`open$$, 
+        Typeset`elements$$, Typeset`q$$, Typeset`opts$$, Typeset`nonpods$$, 
+        Typeset`queryinfo$$, Typeset`sessioninfo$$, Typeset`showpods$$, 
+        Typeset`failedpods$$, Typeset`newq$$}]], StandardForm],
+    ImageSizeCache->{951.5, {513.76953125, 517.73046875}},
+    TrackedSymbols:>{Typeset`showpods$$, Typeset`failedpods$$}],
+   DynamicModuleValues:>{},
+   Initialization:>If[
+     And[
+      Not[Typeset`initdone$$ === True], 
+      Not[Typeset`initdone$$ === FrontEnd`SuppressEvaluationHash[True]]], 
+     Null; AlphaIntegration`DoAsyncInitialization[
+       Hold[{
+        2, {Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$, Typeset`pod4$$, 
+          Typeset`pod5$$, Typeset`pod6$$, Typeset`pod7$$, Typeset`pod8$$, 
+          Typeset`pod9$$, Typeset`pod10$$, Typeset`pod11$$, Typeset`pod12$$, 
+          Typeset`pod13$$, Typeset`pod14$$, Typeset`pod15$$, Typeset`pod16$$, 
+          Typeset`pod17$$, Typeset`pod18$$, Typeset`pod19$$, Typeset`pod20$$, 
+          Typeset`pod21$$, Typeset`pod22$$, Typeset`pod23$$, Typeset`pod24$$, 
+          Typeset`pod25$$, Typeset`pod26$$, Typeset`pod27$$, Typeset`pod28$$, 
+          Typeset`pod29$$, Typeset`pod30$$, Typeset`pod31$$, Typeset`pod32$$, 
+          Typeset`pod33$$, Typeset`pod34$$}, {
+         Typeset`aux1$$, Typeset`aux2$$, Typeset`aux3$$, Typeset`aux4$$, 
+          Typeset`aux5$$, Typeset`aux6$$, Typeset`aux7$$, Typeset`aux8$$, 
+          Typeset`aux9$$, Typeset`aux10$$, Typeset`aux11$$, Typeset`aux12$$, 
+          Typeset`aux13$$, Typeset`aux14$$, Typeset`aux15$$, Typeset`aux16$$, 
+          Typeset`aux17$$, Typeset`aux18$$, Typeset`aux19$$, Typeset`aux20$$, 
+          Typeset`aux21$$, Typeset`aux22$$, Typeset`aux23$$, Typeset`aux24$$, 
+          Typeset`aux25$$, Typeset`aux26$$, Typeset`aux27$$, Typeset`aux28$$, 
+          Typeset`aux29$$, Typeset`aux30$$, Typeset`aux31$$, Typeset`aux32$$, 
+          Typeset`aux33$$, Typeset`aux34$$}, Typeset`chosen$$, Typeset`open$$,
+          Typeset`elements$$, Typeset`q$$, Typeset`opts$$, Typeset`nonpods$$, 
+         Typeset`queryinfo$$, Typeset`sessioninfo$$, Typeset`showpods$$, 
+         Typeset`failedpods$$, Typeset`newq$$, 
+         "https://gateway.wolframalpha.com/calculate/recalc?id=\
+NWM6NDY0NGU2ZTEtZjQ3ZS00N2I2LWE3NTEtOTk0NzVjMmFmYjE5", Typeset`asyncpods$$}]]; 
+     Typeset`asyncpods$$ = {}; 
+     Typeset`initdone$$ = FrontEnd`SuppressEvaluationHash[True]],
+   SynchronousInitialization->False],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "Print", "WolframAlphaFullOutput",
+ CellChangeTimes->{
+  3.963103066321854*^9},ExpressionUUID->"f972f644-5794-4adc-a80d-\
+12aa18a382de"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1024.5, 483},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e6dc49c1-531a-499a-abd3-e3181d4d97b6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 172, 3, 74, "Title",ExpressionUUID->"15ad737a-cf61-4e87-82f9-9c59e7d443d0"],
+Cell[CellGroupData[{
+Cell[777, 29, 191, 3, 51, "Chapter",ExpressionUUID->"7a571189-1c95-4f51-8b0b-a8a2fdcf0846"],
+Cell[CellGroupData[{
+Cell[993, 36, 170, 3, 50, "Section",ExpressionUUID->"3040712b-6737-4218-9515-21825cc412e3"],
+Cell[1166, 41, 1294, 32, 94, "Input",ExpressionUUID->"87ab4fbd-03a1-45e0-b6bf-aef6e5040b95",
+ InitializationCell->True],
+Cell[2463, 75, 1421, 40, 104, "Input",ExpressionUUID->"0aa593d4-76aa-42aa-96a7-93d808267b08",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3921, 120, 160, 3, 50, "Section",ExpressionUUID->"ea6dfd94-ea3e-4862-b0cf-2ea98ca6f806"],
+Cell[4084, 125, 3193, 82, 270, "Input",ExpressionUUID->"82f1bf03-66c2-4f25-8a9d-b2488d65e3c3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7314, 212, 154, 3, 50, "Section",ExpressionUUID->"1e97d717-2e65-47c1-9d12-a09861dedcb2"],
+Cell[CellGroupData[{
+Cell[7493, 219, 433, 9, 24, "Input",ExpressionUUID->"2a6d72a7-55b4-4a50-b139-af7b01f8cfcd"],
+Cell[7929, 230, 520, 10, 34, "Output",ExpressionUUID->"4c5bad3e-015e-4bfe-af78-e67d292cdcfe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8486, 245, 359, 8, 24, "Input",ExpressionUUID->"5bd93987-b3ae-4846-a4ea-184bea8e7eac"],
+Cell[8848, 255, 472, 9, 34, "Output",ExpressionUUID->"5d472599-5a4b-4359-bc9b-66718809ade2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9357, 269, 410, 9, 22, "Input",ExpressionUUID->"d96f32ca-171e-4b78-ab3b-32c791296d15"],
+Cell[9770, 280, 333, 6, 34, "Output",ExpressionUUID->"50156fd9-a543-466d-93c5-aa5bec7d81b2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10140, 291, 464, 10, 24, "Input",ExpressionUUID->"a448136a-77dc-4ea6-a93a-326ffa9af541"],
+Cell[10607, 303, 576, 11, 34, "Output",ExpressionUUID->"065963cf-d22c-4496-b477-2c156aad1a5f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11220, 319, 297, 5, 22, "Input",ExpressionUUID->"afb18122-23cf-48d4-a24f-49308fcca337"],
+Cell[11520, 326, 282, 5, 34, "Output",ExpressionUUID->"ad235e79-b01a-4c81-b902-5fed789c8b6d"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11863, 338, 151, 3, 51, "Chapter",ExpressionUUID->"1b5d4d3d-348f-4a11-a6cd-a32a4246ceb1"],
+Cell[CellGroupData[{
+Cell[12039, 345, 211, 2, 30, "WolframAlphaLong",ExpressionUUID->"c545dca8-658c-4384-a2c2-9807ac660434"],
+Cell[12253, 349, 56645, 1124, 1039, "Print",ExpressionUUID->"f972f644-5794-4adc-a80d-12aa18a382de"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
